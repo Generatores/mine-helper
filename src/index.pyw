@@ -3,15 +3,18 @@ from tkinter import ttk
 
 import directives.WalkDirective as walkdir
 import directives.MineDirective as minedir
+from components.MenuBar import MenuBar
 
 
 def Index():
     root = Tk()
-    root.geometry('300x125')
+    root.geometry('300x450')
     root.title("Mine-Helper")
 
     frm = ttk.Frame(root, padding=10)
     frm.grid()
+
+    WindowMenu = MenuBar(root)
 
     ttk.Label(frm, text="Welcome to Mine-Helper bot").grid(column=0, row=0)
 
@@ -24,6 +27,8 @@ def Index():
         lambda: walkdir.WalkDirective())).grid(column=1, row=2)
 
     ttk.Button(frm, text="Quit", command=root.destroy).grid(column=0, row=3)
+
+    root.config(menu=WindowMenu)
 
     root.mainloop()
 
