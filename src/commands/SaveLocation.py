@@ -1,6 +1,6 @@
 import pyautogui
 
 
-def SaveCoordinate():
+def AppendLocation():
     x, y = pyautogui.position()
     return (x, y)
