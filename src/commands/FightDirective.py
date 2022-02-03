@@ -6,7 +6,6 @@ from pyautogui import alert
 
 def AttackDirective():
     time.sleep(5)
-    print('attack started')
     trigger = False
     while trigger == False:
         mouse.click()
