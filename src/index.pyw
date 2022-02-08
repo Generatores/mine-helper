@@ -4,6 +4,7 @@ from tkinter import ttk
 from commands.WalkDirective import WalkDirective
 from commands.MineDirective import MineDirective
 from commands.FightDirective import AttackDirective
+from commands.FightDirective import ShootDirective
 from components.MenuBar import MenuBar
 
 
@@ -29,6 +30,10 @@ def Index():
     ttk.Label(frm, text="You will automatically attack").grid(row=3, column=0)
     ttk.Button(frm, text="Attack", command=(
         lambda: AttackDirective())).grid(row=3, column=1)
+
+    ttk.Label(frm, text="You will automatically shot").grid(row=4, column=0)
+    ttk.Button(frm, text="Shoot", command=(
+        lambda: ShootDirective())).grid(row=4, column=1)
 
     ttk.Button(frm, text="Quit", command=root.destroy).grid(
         row=5, column=0, columnspan=2)
