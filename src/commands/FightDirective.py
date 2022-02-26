@@ -1,7 +1,7 @@
 import mouse
 import keyboard
 import time
-from pyautogui import alert
+from tkinter import messagebox
 
 
 def AttackDirective():
@@ -9,11 +9,16 @@ def AttackDirective():
     trigger = False
     while trigger == False:
         mouse.click()
-        time.sleep(.01)
-        trigger = keyboard.is_pressed("e")
-    alert(title="Directive completed",
-          text="The attack directive has been executed successfully")
+        time.sleep(.1)
+        trigger = keyboard.is_pressed("x")
+    messagebox.showinfo(title='Fight Directive', message='The fight directive was completed!')
 
-
-if __name__ == "__main__":
-    AttackDirective()
+def ShootDirective():
+    time.sleep(5)
+    trigger = False
+    while trigger == False:
+        mouse.press(button='right')
+        time.sleep(1.5)
+        mouse.release(button='right')
+        trigger = keyboard.is_pressed("x")
+    messagebox.showinfo(title='Shoot Directive', message='The shoot directive was completed!')
